@@ -61,6 +61,7 @@ def add_sidebar():
         
     return input_dict
 
+
 def get_scaled_values(input_dict):
     """scale input values between 0 and 1
     
@@ -171,11 +172,12 @@ def main():
     st.set_page_config(page_title="Breast Cancer Predictor", page_icon=":female-doctor:", layout="wide", initial_sidebar_state="expanded")
     
     # import CSS as markdown file
-    with open("../assets/style.css") as f:
+    with open("/assets/style.css") as f:
         st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
     
     # add the sidebar
     input_data = add_sidebar()
+    
     # st.write(input_data)
     # Create a container and add elements inside it
     with st.container():
@@ -197,7 +199,6 @@ def main():
         add_predictions(input_data)
         
         
-        
-        
+
 if __name__ == '__main__':
     main()
