@@ -3,6 +3,7 @@ import pickle
 import pandas as pd
 import plotly.graph_objects as go
 import numpy as np
+import sys
 
 def get_clean_data():
     data = pd.read_csv("../data/data.csv")
@@ -171,8 +172,10 @@ def main():
     # set page config
     st.set_page_config(page_title="Breast Cancer Predictor", page_icon=":female-doctor:", layout="wide", initial_sidebar_state="expanded")
     
+    temp_file = "../assets/style2.css"
+    
     # import CSS as markdown file
-    with open("/assets/style.css") as f:
+    with open("../assets/style2.css") as f:
         st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
     
     # add the sidebar
